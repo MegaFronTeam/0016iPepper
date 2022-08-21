@@ -1,10 +1,38 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+		+e.container.container
+			+img('img/svg/bg-1.svg').bg.bg--1
+			+img('img/svg/bg-2.svg').bg.bg--2
+			+img('img/svg/logo.svg').logo
+			h1 Welcome to the Library of Delicious Recipes
+			+e.choose Choose your language
+			+e.row.row
+				.col-auto
+					+e.lang
+						label
+							input(type="radio", name="lang")
+							+img(`img/flag-1.png`)
+							span Russian
+				.col-auto
+					+e.lang
+						label
+							input(type="radio", name="lang")
+							+img(`img/flag-2.png`)
+							span English
+				.col-auto
+					+e.lang
+						label
+							input(type="radio", name="lang")
+							+img(`img/flag-3.png`)
+							span Spanish
+				-for(let i = 4; i<=9; i++)
+					.col-auto
+						+e.lang.disabled
+							label
+								input(type="radio", name="lang" disabled)
+								+img(`img/flag-${i}.png`)
+			+e.btn(href="#").btn.btn-primary Apply
+				+icon('chevron-right')
+			+e.reserved © 2022 – iPepper.org. All rights reserved.
 	// end headerBlock

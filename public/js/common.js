@@ -351,7 +351,13 @@ function eventHandler() {
 			// }
 		},
 	}
-
+	
+	const swiperbreadcrumb = new Swiper('.breadcrumb-slider--js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		watchOverflow: true
+	});
+	
 	const swiper4 = new Swiper('.sBanners__slider--js', {
 		// slidesPerView: 5,
 		...defaultSl,
@@ -364,6 +370,14 @@ function eventHandler() {
 
 	});
 	// modal window
+
+	let langs = $('.headerBlock__lang:not(.disabled)');
+	for (let i = 0; i < langs.length; i++) {
+		langs[i].addEventListener("click", function() {
+			$('.headerBlock__btn').addClass('checked');
+			$('.headerBlock__reserved').addClass('checked');
+		});
+	}
 
 };
 if (document.readyState !== 'loading') {
