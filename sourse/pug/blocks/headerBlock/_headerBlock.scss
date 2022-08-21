@@ -149,6 +149,7 @@
 		font-size: rem(14);
 		left: 50%;
 		transform: translateX(-50%);
+		width: 100%;
 		@include media-breakpoint-up(md) {
 			bottom: rem(40);
 		}
