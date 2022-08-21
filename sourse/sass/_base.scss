@@ -506,3 +506,12 @@ iframe {
 .fancybox__content :focus:not(.carousel__button.is-close){
 	outline: none !important;
 }
+
+.fadeIn {
+	animation: fadeIn 0.7s ease-in 0.1s 1;
+}
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}

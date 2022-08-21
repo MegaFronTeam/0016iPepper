@@ -376,9 +376,18 @@ function eventHandler() {
 		langs[i].addEventListener("click", function() {
 			$('.headerBlock__btn').addClass('checked');
 			$('.headerBlock__reserved').addClass('checked');
+			$('.headerBlock__lang-content').addClass('fadeIn');
+			setTimeout(() => {
+				$('.headerBlock__lang-content').removeClass('fadeIn');
+			}, 1000);
 		});
 	}
-
+	$(document).ready( function(){
+		$('body').addClass('fadeIn');
+		setTimeout(() => {
+			$('body').removeClass('fadeIn');
+		}, 1000);
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

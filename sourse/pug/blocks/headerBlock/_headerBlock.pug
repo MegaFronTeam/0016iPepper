@@ -5,15 +5,22 @@ mixin headerBlock()
 			+img('img/svg/bg-1.svg').bg.bg--1
 			+img('img/svg/bg-2.svg').bg.bg--2
 			+img('img/svg/logo.svg').logo
-			h1 Welcome to the Library of Delicious Recipes
-			+e.choose Choose your language
+			//- +e.lang-content
+			//- 		.h1 Добро пожаловать в Бблиотеку Вкусных Рецептов
+			//- 		+e.choose Выберите свой языки
+			+e.lang-content
+					.h1 Welcome to the Library of Delicious Recipes
+					+e.choose Choose your language
+			//- +e.lang-content
+			//- 		.h1 Bienvenido a la Biblioteca de Deliciosas Recetas
+			//- 		+e.choose Elige tu idioma
 			+e.row.row
 				.col-auto
 					+e.lang
 						label
 							input(type="radio", name="lang")
 							+img(`img/flag-1.png`)
-							span Russian
+							span Русский
 				.col-auto
 					+e.lang
 						label
@@ -25,7 +32,7 @@ mixin headerBlock()
 						label
 							input(type="radio", name="lang")
 							+img(`img/flag-3.png`)
-							span Spanish
+							span Español
 				-for(let i = 4; i<=9; i++)
 					.col-auto
 						+e.lang.disabled
