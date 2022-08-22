@@ -372,22 +372,34 @@ function eventHandler() {
 	// modal window
 
 	let langs = $('.headerBlock__lang:not(.disabled)');
-	for (let i = 0; i < langs.length; i++) {
-		langs[i].addEventListener("click", function() {
+	for (const lang of langs) {
+ 
+		lang.addEventListener("click", function() {
+			
+			// console.log(langText);
+
+			let texts = document.querySelectorAll(".change-lang");
+			let langText = this.querySelector("input").value;
+
+			for (const text of texts) { 
+					
+				setTimeout(() => {
+					// $('.headerBlock__lang-content').removeClass('fadeIn');
+					text.innerText = text.getAttribute(`data-${langText}`) 
+				}, 200);
+			}
+
 			$('.headerBlock__btn').addClass('checked');
 			$('.headerBlock__reserved').addClass('checked');
 			$('.headerBlock__lang-content').addClass('fadeIn');
+
 			setTimeout(() => {
 				$('.headerBlock__lang-content').removeClass('fadeIn');
 			}, 1000);
 		});
 	}
-	$(document).ready( function(){
-		$('body').addClass('fadeIn');
-		setTimeout(() => {
-			$('body').removeClass('fadeIn');
-		}, 1000);
-	});
+
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
@@ -396,9 +408,15 @@ if (document.readyState !== 'loading') {
 }
 
 // window.onload = function () {
-// 	document.body.classList.add('loaded_hiding');
-// 	window.setTimeout(function () {
-// 		document.body.classList.add('loaded');
-// 		document.body.classList.remove('loaded_hiding');
-// 	}, 500);
-// }
+	// 	document.body.classList.add('loaded_hiding');
+	// 	window.setTimeout(function () {
+		// 		document.body.classList.add('loaded');
+		// 		document.body.classList.remove('loaded_hiding');
+		// 	}, 500);
+		// }
+		$(document).ready( function(){
+			$('body').addClass('fadeIn');
+			setTimeout(() => {
+				$('body').removeClass('fadeIn');
+			}, 1000);
+		});

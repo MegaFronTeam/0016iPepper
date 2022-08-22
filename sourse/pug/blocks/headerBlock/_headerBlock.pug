@@ -9,8 +9,8 @@ mixin headerBlock()
 			//- 		.h1 Добро пожаловать в Бблиотеку Вкусных Рецептов
 			//- 		+e.choose Выберите свой языки
 			+e.lang-content
-					.h1 Welcome to the Library of Delicious Recipes
-					+e.choose Choose your language
+					.h1(class="change-lang" data-rus=" Welcome to the Library of Delicious Recipes rus" data-eng=" Welcome to the Library of Delicious Recipes eng" data-esp="Welcome to the Library of Delicious Recipes esp") Welcome to the Library of Delicious Recipes
+					+e.choose(class="change-lang" data-rus="  Choose your language rus" data-eng="  Choose your language eng" data-esp=" Choose your language esp") Choose your language
 			//- +e.lang-content
 			//- 		.h1 Bienvenido a la Biblioteca de Deliciosas Recetas
 			//- 		+e.choose Elige tu idioma
@@ -18,19 +18,19 @@ mixin headerBlock()
 				.col-auto
 					+e.lang
 						label
-							input(type="radio", name="lang")
+							input(type="radio", name="lang" value='rus')
 							+img(`img/flag-1.png`)
 							span Русский
 				.col-auto
 					+e.lang
 						label
-							input(type="radio", name="lang")
+							input(type="radio", name="lang" value='eng')
 							+img(`img/flag-2.png`)
 							span English
 				.col-auto
 					+e.lang
 						label
-							input(type="radio", name="lang")
+							input(type="radio", name="lang"  value='esp')
 							+img(`img/flag-3.png`)
 							span Español
 				-for(let i = 4; i<=9; i++)
