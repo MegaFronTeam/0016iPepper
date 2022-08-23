@@ -379,22 +379,31 @@ function eventHandler() {
 			// console.log(langText);
 
 			let texts = document.querySelectorAll(".change-lang");
+			let btns = document.querySelectorAll(".headerBlock__btn");
 			let langText = this.querySelector("input").value;
 
 			for (const text of texts) { 
 					
 				setTimeout(() => {
 					// $('.headerBlock__lang-content').removeClass('fadeIn');
-					text.innerText = text.getAttribute(`data-${langText}`) 
+					text.innerHTML = text.getAttribute(`data-${langText}`) 
+				}, 200);
+			}
+			for (const btn of btns) { 
+					
+				setTimeout(() => {
+					// $('.headerBlock__lang-content').removeClass('fadeIn');
+					btn.innerHTML = btn.getAttribute(`data-${langText}`);
 				}, 200);
 			}
 
-			$('.headerBlock__btn').addClass('checked');
+			$('.headerBlock__btn').addClass('checked fadeIn');
 			$('.headerBlock__reserved').addClass('checked');
 			$('.headerBlock__lang-content').addClass('fadeIn');
 
 			setTimeout(() => {
 				$('.headerBlock__lang-content').removeClass('fadeIn');
+				$('.headerBlock__btn').removeClass('fadeIn');
 			}, 1000);
 		});
 	}

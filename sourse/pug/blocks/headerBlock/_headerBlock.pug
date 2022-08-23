@@ -9,7 +9,7 @@ mixin headerBlock()
 			//- 		.h1 Добро пожаловать в Бблиотеку Вкусных Рецептов
 			//- 		+e.choose Выберите свой языки
 			+e.lang-content
-					.h1(class="change-lang" data-rus=" Добро пожаловать в Бблиотеку Вкусных Рецептов" data-eng=" Welcome to the Library of Delicious Recipes" data-esp="Bienvenido a la Biblioteca de Deliciosas Recetas") Welcome to the Library of Delicious Recipes
+					.h1(class="change-lang" data-rus=` Добро пожаловать в библиотеку <br> вкусных рецептов` data-eng=" Welcome to the Library<br>of Delicious Recipes" data-esp="Bienvenido a la biblioteca<br>de deliciosas recetas") Welcome to the Library <br> of Delicious Recipes
 					+e.choose(class="change-lang" data-rus="Выберите свой языки" data-eng="  Choose your language" data-esp="Elige tu idioma") Choose your language
 			//- +e.lang-content
 			//- 		.h1 Bienvenido a la Biblioteca de Deliciosas Recetas
@@ -39,7 +39,7 @@ mixin headerBlock()
 							label
 								input(type="radio", name="lang" disabled)
 								+img(`img/flag-${i}.png`)
-			+e.btn(href="#").btn.btn-primary Apply
-				+icon('chevron-right')
+			+e.btn(href="#" data-rus=`Перейти` data-eng="Apply" data-esp="Pasarse").btn.btn-primary Apply
+				//- +icon('chevron-right')
 			+e.reserved © 2022 – iPepper.org. All rights reserved.
 	// end headerBlock
