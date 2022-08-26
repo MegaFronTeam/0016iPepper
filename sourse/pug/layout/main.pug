@@ -2,7 +2,7 @@ include include.pug
 include js-css.pug
 include ../blocks/modal/_modal.pug
 doctype html
-html(lang="ru")
+html(lang="")
 	head
 		meta(charset="utf-8")
 
@@ -28,8 +28,19 @@ html(lang="ru")
 		//- 		 w();
 		//- 		}, { passive: true });
 		//- 	}
+
+		meta(property="og:title" content= "iPepper.org | The Library of Delicious Recipes")
+		meta(property="og:type" content="website")
+		meta(property="og:image" content="img/og.png")
+		meta(property="og:image:width" content="1280")
+		meta(property="og:image:height" content="630")
 		meta(name="viewport", content="width=device-width,initial-scale=1.0,  shrink-to-fit=no")
-		link(type="image/ico", href='img/favicon.ico', rel='shortcut icon') 
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon//apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon//favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon//favicon-16x16.png">
+		<link rel="manifest" href="favicon//site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
 		<meta name="format-detection" content="telephone=no"> 
 		+allcss()
 	block variables

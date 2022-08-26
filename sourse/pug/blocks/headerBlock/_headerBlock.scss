@@ -50,12 +50,34 @@
 			}
 		}
 	}
+	&__lang-content {
+		min-height: 11.5em;
+		@include media-breakpoint-up(sm) {
+			min-height: 14.4em;
+		}
+		@include media-breakpoint-down(md) {
+			max-width: 410px;
+			margin-left: auto;
+    	margin-right: auto;
+		}
+		@include media-breakpoint-down(sm) {
+			max-width: 300px;
+		}
+	}
 	.h1 {
 		font-weight: 700;
 		margin-bottom: rem(20);
-		max-width: rem(622);
+		// max-width: rem(622);
     margin-left: auto;
     margin-right: auto;
+		@include media-breakpoint-down(sm) {
+			font-size: 26px;
+		}
+		br {
+			@include media-breakpoint-down(lg) {
+				display: none;
+			}
+		}
 	}
 	&__choose {
 		color: $primary;
@@ -85,11 +107,19 @@
 		width: 65px;
 		height: 65px;
 		position: relative;
+		background-color: #fff;
 		&.disabled {
-			pointer-events: none;
+			// pointer-events: none;
 			input {
 				background-color: #F4E5D0;
 				border-color: #F4E5D0;
+				&:hover, &:checked {
+					background-color: #F4E5D0;
+					border-color: #F4E5D0;
+				}
+				&[disabled] {
+					cursor: not-allowed;
+				}
 			}
 			img {
 				opacity: .5;
@@ -171,8 +201,14 @@
 		opacity: 0;
 		pointer-events: none;
 		box-shadow: 0px -5px 25px rgba(226, 24, 15, 0.2);
+		--bs-btn-padding-x: 2.75rem;
+		--bs-btn-hover-bg: #{#e2180fc2};
+		--bs-btn-hover-border-color: #{#e2180fc2};
+		--bs-btn-active-bg: #{#e2180fc2};
+		--bs-btn-active-border-color: #{#e2180fc2};
 		&:hover {
 			box-shadow: none;
+			opacity: .9;
 		}
 		@include media-breakpoint-down(md) {
 			position: absolute;
@@ -185,15 +221,28 @@
 			opacity: 1;
 			pointer-events: all;
 		}
-		.icon {
+		// .icon {
+		// 	position: absolute;
+		// 	top: 50%;
+		// 	right: 20px;
+		// 	transform: translateY(-50%);
+		// 	font-size: rem(20);
+		// 	fill: none;
+		// 	stroke: currentColor;
+		// 	stroke-width: 2px;
+		// }
+		&::after {
+			content: '';
 			position: absolute;
 			top: 50%;
 			right: 20px;
 			transform: translateY(-50%);
-			font-size: rem(20);
-			fill: none;
-			stroke: currentColor;
-			stroke-width: 2px;
+			width: 20px;
+			height: 20px;
+			background-image: url('../img/svg/chevron-right.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
 		}
 	}
 	@include media-breakpoint-up(xl) {}

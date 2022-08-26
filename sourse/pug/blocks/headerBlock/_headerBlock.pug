@@ -9,8 +9,8 @@ mixin headerBlock()
 			//- 		.h1 Добро пожаловать в Бблиотеку Вкусных Рецептов
 			//- 		+e.choose Выберите свой языки
 			+e.lang-content
-					.h1(class="change-lang" data-ru=" Welcome to the Library of Delicious Recipes rus" data-eng=" Welcome to the Library of Delicious Recipes eng" data-esp="Welcome to the Library of Delicious Recipes esp") Welcome to the Library of Delicious Recipes
-					+e.choose(class="change-lang" data-ru="  Choose your language rus" data-eng="  Choose your language eng" data-esp=" Choose your language esp") Choose your language
+					.h1(class="change-lang" data-ru-RU=` Добро&nbsp;пожаловать в&nbsp;библиотеку <br> вкусных&nbsp;рецептов` data-en=" Welcome to&nbsp;the&nbsp;Library <br> of&nbsp;Delicious&nbsp;Recipes" data-es-ES="Bienvenido a&nbsp;la biblioteca&nbsp;<br>&nbsp;de deliciosas&nbsp;recetas") Welcome to&nbsp;the&nbsp;Library <br> of&nbsp;Delicious&nbsp;Recipes
+					+e.choose(class="change-lang" data-ru-RU="Выберите свой язык" data-en="Choose your language" data-es-ES="Elige tu idioma") Choose your language
 			//- +e.lang-content
 			//- 		.h1 Bienvenido a la Biblioteca de Deliciosas Recetas
 			//- 		+e.choose Elige tu idioma
@@ -18,19 +18,19 @@ mixin headerBlock()
 				.col-auto
 					+e.lang
 						label
-							input(type="radio", name="lang" value='ru')
+							input(type="radio", name="lang"  value='ru-RU')
 							+img(`img/flag-1.png`)
 							span Русский
 				.col-auto
 					+e.lang
 						label
-							input(type="radio", name="lang" value='eng')
+							input(type="radio", name="lang" value='en')
 							+img(`img/flag-2.png`)
 							span English
 				.col-auto
 					+e.lang
 						label
-							input(type="radio", name="lang"  value='esp')
+							input(type="radio", name="lang"  value='es-ES')
 							+img(`img/flag-3.png`)
 							span Español
 				-for(let i = 4; i<=9; i++)
@@ -39,7 +39,7 @@ mixin headerBlock()
 							label
 								input(type="radio", name="lang" disabled)
 								+img(`img/flag-${i}.png`)
-			+e.btn(href="#").btn.btn-primary Apply
-				+icon('chevron-right')
+			+e.btn(href="#" data-href-ru-RU="https://ru.ipepper.org" data-href-es-ES="https://es.ipepper.org" data-href-en="https://en.ipepper.org" data-ru-RU=`Перейти` data-en="Apply" data-es-ES="Pasarse").btn.btn-primary.change-lang Apply
+				//- +icon('chevron-right')
 			+e.reserved © 2022 – iPepper.org. All rights reserved.
 	// end headerBlock
