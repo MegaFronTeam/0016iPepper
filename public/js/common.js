@@ -57,8 +57,10 @@ if (document.readyState !== 'loading') {
 	document.addEventListener('DOMContentLoaded', eventHandler);
 }
 
-let checkUserLang = navigator.language || navigator.userLanguage; 
+let checkUser = navigator.language || navigator.userLanguage; 
+// let checkUser = navigator.languages ; 
  
+let checkUserLang = (checkUser == 'ru') ? "ru-RU" : checkUser;
 // console.log(userLang);
 console.log(checkUserLang);
 
