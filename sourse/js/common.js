@@ -13,7 +13,7 @@ function setLang(langText) {
 				text.href = text.getAttribute(`data-href-${langText}`)
 
 			}
-			document.documentElement.setAttribute('lang', (langText == "ru-RU") ? 'ru' : langText)
+			document.documentElement.setAttribute('lang',  langText)
 		}, 200);
 	}
 
@@ -60,8 +60,12 @@ if (document.readyState !== 'loading') {
 let checkUser = navigator.language || navigator.userLanguage; 
 // let checkUser = navigator.languages ; 
  
-let checkUserLang = (checkUser == 'ru') ? "ru-RU" : checkUser;
-// console.log(userLang);
+// let checkUserLang = (checkUser == 'ru') ? "ru-RU" : checkUser;
+let checkUserLang =  window.navigator ? (window.navigator.language ||
+	window.navigator.systemLanguage ||
+	window.navigator.userLanguage) : "ru";
+  checkUserLang = checkUserLang.substr(0, 2).toLowerCase();
+	// console.log(userLang);
 console.log(checkUserLang);
 
 // console.log(document.querySelector(`[value=${checkUserLang}]`));
